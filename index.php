@@ -17,18 +17,20 @@ class Movie extends Production {
     public $profitti;
     public $durata;
 
-    // function __construct($_profitti, $_durata) {
-    //     $this-> profitti = $_profitti;
-    //     $this-> durata = $_durata;
-    // }
+    function __construct($_title, $_language, $_vote, $_profitti, $_durata) {
+        parent::__construct($_title, $_language, $_vote);
+        $this->profitti = $_profitti;
+        $this->durata = $_durata;
+    }
 }
 
 class TVSerie extends Production {
     public $numero_di_stagioni;
 
-    // function __construct($_numero_di_stagioni) {
-    //     $this-> numero_di_stagioni = $_numero_di_stagioni;
-    // }
+    function __construct($_title, $_language, $_vote, $_numero_di_stagioni) {
+        parent::__construct($_title, $_language, $_vote);
+        $this->numero_di_stagioni = $_numero_di_stagioni;
+    }
 }
 
 $filmone = new Production("filmone", "it", 10);
@@ -95,6 +97,16 @@ $serie1 = new TVSerie("serie 1", "en", 5, 4)
             <p><?php echo $movie1->vote?></p>
             <p><?php echo $movie1->profitti?></p>
             <p><?php echo $movie1->durata?></p>
+        </div>
+    </div>
+    <div class="film">
+        <div class="film--title">
+            <h1><?php echo $serie1->title?></h1>
+        </div>
+        <div class="film--body">
+            <p><?php echo $serie1->language?></p>
+            <p><?php echo $serie1->vote?></p>
+            <p><?php echo $serie1->numero_di_stagioni?></p>
         </div>
     </div>
 </body>
