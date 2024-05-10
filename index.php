@@ -13,17 +13,32 @@ class Production {
 
 }
 
+class Movie extends Production {
+    public $profitti;
+    public $durata;
+
+    // function __construct($_profitti, $_durata) {
+    //     $this-> profitti = $_profitti;
+    //     $this-> durata = $_durata;
+    // }
+}
+
+class TVSerie extends Production {
+    public $numero_di_stagioni;
+
+    // function __construct($_numero_di_stagioni) {
+    //     $this-> numero_di_stagioni = $_numero_di_stagioni;
+    // }
+}
+
 $filmone = new Production("filmone", "it", 10);
 $filmino = new Production("filmino", "en", 5);
-// echo $filmone->title;
 
-// echo $filmone->title;
-// echo $filmone->language;
-// echo $filmone->vote;
+$movie1 = new Movie("movie 1", "it", 10, 2000, 3);
+$movie2 = new Movie("movie 2", "en", 5, 40, 1,50);
 
-// echo $filmino->title;
-// echo $filmino->language;
-// echo $filmino->vote;
+$serie1 = new TVSerie("serie 1", "en", 5, 4)
+
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +84,17 @@ $filmino = new Production("filmino", "en", 5);
         <div class="film--body">
             <p><?php echo $filmone->language?></p>
             <p><?php echo $filmone->vote?></p>
+        </div>
+    </div>
+    <div class="film">
+        <div class="film--title">
+            <h1><?php echo $movie1->title?></h1>
+        </div>
+        <div class="film--body">
+            <p><?php echo $movie1->language?></p>
+            <p><?php echo $movie1->vote?></p>
+            <p><?php echo $movie1->profitti?></p>
+            <p><?php echo $movie1->durata?></p>
         </div>
     </div>
 </body>
